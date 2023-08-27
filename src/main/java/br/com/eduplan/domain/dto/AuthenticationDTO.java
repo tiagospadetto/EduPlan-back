@@ -1,4 +1,6 @@
 package br.com.eduplan.domain.dto;
 
-public record AuthenticationDTO(String email, String password) {
+import jakarta.validation.constraints.Email;
+
+public record AuthenticationDTO(@Email String email, String password) {
 }

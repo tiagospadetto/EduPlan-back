@@ -1,0 +1,3 @@
+ALTER TABLE users
+ADD COLUMN name VARCHAR(50),
+ADD COLUMN last_name VARCHAR(50);
