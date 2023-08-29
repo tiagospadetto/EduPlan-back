@@ -42,11 +42,12 @@ public class User implements UserDetails, Serializable {
     @Column(name = "last_name", nullable = false)
     private String lastName;
 
-
-    public User(String email, String password, UserRoleEnum role) {
+    public User(String email, String password, UserRoleEnum role, String name, String lastName) {
         this.email = email;
         this.password = password;
         this.role = role;
+        this.name = name;
+        this.lastName = lastName;
     }
 
     @Override

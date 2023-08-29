@@ -20,4 +20,10 @@ public class TesteController {
 
         return ResponseEntity.ok("Validou User");
     }
+
+    @GetMapping(value = "/vai")
+    public ResponseEntity getTeste2(){
+
+        return ResponseEntity.ok("Validou User");
+    }
 }
