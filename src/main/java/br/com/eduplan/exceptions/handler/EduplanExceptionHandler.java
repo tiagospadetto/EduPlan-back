@@ -2,6 +2,7 @@ package br.com.eduplan.exceptions.handler;
 
 import br.com.eduplan.exceptions.EmailAlreadyExistsException;
 import br.com.eduplan.exceptions.UserInactiveException;
+import br.com.eduplan.exceptions.UserNotFoundException;
 import br.com.eduplan.exceptions.model.ErrorResponse;
 import lombok.NonNull;
 import org.springframework.http.HttpHeaders;
@@ -18,7 +19,6 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 @ControllerAdvice
 public class EduplanExceptionHandler extends ResponseEntityExceptionHandler {
-
 
     @ExceptionHandler(BadCredentialsException.class)
     public ResponseEntity<Object> handleBadCredentialsException(BadCredentialsException ex) {
@@ -44,11 +44,17 @@ public class EduplanExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(UserInactiveException.class)
-    public ResponseEntity<Object> handleEmailAlreadyExistsException(UserInactiveException ex) {
+    public ResponseEntity<Object> handleUserInactiveException(UserInactiveException ex) {
         ErrorResponse errorResponse = new ErrorResponse();
         errorResponse.setMessage(ex.getMessage());
         errorResponse.setStatusCode(HttpStatus.FORBIDDEN.value());
         return new ResponseEntity<>(errorResponse, HttpStatus.FORBIDDEN);
     }
-
+    @ExceptionHandler(UserNotFoundException.class)
+    public ResponseEntity<Object> handleUserNotFoundException(UserNotFoundException ex) {
+        ErrorResponse errorResponse = new ErrorResponse();
+        errorResponse.setMessage(ex.getMessage());
+        errorResponse.setStatusCode(HttpStatus.NOT_FOUND.value());
+        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+    }
 }
