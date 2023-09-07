@@ -39,11 +39,14 @@ git checkout develop
 
 Antes de executar o projeto, você precisará configurar o banco de dados PostgreSQL:
 
-Crie um banco de dados no PostgreSQL com o nome eduplan.
+1. Instale [PostgresSQL](https://www.postgresql.org/)
 
-Atualize as configurações do banco de dados no arquivo src/main/resources/application.properties com suas informações de conexão. Por exemplo:
+2. Crie um banco de dados no PostgreSQL com o nome eduplan.
 
-```bash
+3. Atualize as configurações do banco de dados no arquivo src/main/resources/application.properties com suas informações de conexão. 
+Por exemplo:
+
+```markdown
 spring.datasource.url=${db-url:jdbc:postgresql://localhost:5432/eduplan}
 spring.datasource.username=${db-user:postgres}
 spring.datasource.password=${db-password:8l&6AVDF06W1d%xkHt}
