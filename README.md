@@ -11,9 +11,9 @@ O repositório "Eduplan-back" contém o código-fonte da API backend para o proj
 API utiliza as tecnologias: **Java, Java Spring, Flyway Migrations, PostgresSQL como database,Spring Security, JWT para controle de autenticação e Docker.**
 
 ## Tábela de conteúdo:
-- [Requisitos](#requsitos)
-- [Instalação](#instalacao)
-- [Configuração do Banco de Dados](#bd)
+- [Requisitos](#requisitos)
+- [Instalação](#instalação)
+- [Configuração do Banco de Dados](#configuração-do-banco-de-dados)
 
 
 ## Requisitos
